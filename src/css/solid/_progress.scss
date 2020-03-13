@@ -1,0 +1,20 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Progress component styling.
+* ------------------------------------------------------------------------ */
+
+$progress-bg:				color("primary");
+$progress-height:			0.5rem;
+$progress-border-radius:	$border-radius;
+
+/* Outer progress container */
+.progress{
+	height: $progress-height;
+	border-radius: $progress-border-radius;
+}
+
+/* Inner progress bar */
+.progress-bar{
+	background-color: $progress-bg;
+}
+

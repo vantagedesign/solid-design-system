@@ -1,0 +1,139 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Navbar component styling.
+* ------------------------------------------------------------------------ */
+
+$navbar-toggler-bg:			color("dark");
+$navbar-dark-toggler-bg:	color-text("dark");
+$navbar-toggler-speed:		$transition-speed;
+
+$navbar-dark-color:			color-text("dark");
+$navbar-light-color:		color-text("light");
+
+
+/* Animated navbar toggler, transforming from a hamburger to an X */
+.navbar-toggler{
+	border:none;
+	& > .navbar-toggler-icon{
+		position: relative;
+		background-image: none !important;
+		background: transparent;
+		height: 3px;
+		width: 18px;
+		&:before, &:after{
+			background: $navbar-toggler-bg;
+			content: '';
+			display: block;
+			height: 100%;
+			position: absolute;
+			transition: all $navbar-toggler-speed ease-out;
+			width: 100%;
+		}
+		&:before{
+			top: 0;
+			transform: rotate(45deg);
+		}
+		&:after{
+			top: 0;
+			transform: rotate(-45deg);
+		}
+	}
+	&.collapsed{
+		.navbar-toggler-icon{
+			background-image: none !important;
+			background: $navbar-toggler-bg;
+			&:before{
+				top: -6px;
+				transform: none;
+			}
+			&:after{
+				top: 6px;
+				transform: none;
+			}
+		}
+		&:hover{
+			& > .navbar-toggler-icon:before{
+				top: -8px;
+			}
+			& > .navbar-toggler-icon:after{
+				top: 8px;
+			}
+		}
+	}
+}
+
+
+/* Styling for the dark navbar */
+.navbar-dark{
+	.navbar-nav .nav-link{
+		color: rgba($navbar-dark-color, 0.8);
+		position: relative;
+		transition: all $transition-speed ease;
+		&:hover, &.active{
+			color: $navbar-dark-color;
+		}
+	}
+	input, .input-group-text{
+		&:focus{
+			color: $navbar-dark-color;
+		}
+		&::placeholder{
+			opacity: 0.5;
+			color: $navbar-dark-color;
+		}
+		color: $navbar-dark-color;
+	}
+	.navbar-toggler{
+		.navbar-toggler-icon{
+			&:before, &:after{
+				background-color: $navbar-dark-toggler-bg;
+			}
+		}
+		&.collapsed .navbar-toggler-icon{
+			background: $navbar-dark-toggler-bg;
+		}
+	}
+}
+
+
+/* Styling for the light navbar */
+.navbar-light{
+	.navbar-nav .nav-link{
+		color: $navbar-light-color;
+	}
+	input{
+		&:focus{
+			color: $navbar-light-color;
+		}
+		&::placeholder{
+			opacity: 0.5;
+			color: $navbar-light-color;
+		}
+		color: $navbar-light-color;
+	}
+}
+
+/* Styling for making background and shadow visible on scroll */
+.navbar-scrollstyle{
+	transition: background-color $transition-speed-fast ease-out, box-shadow $transition-speed-fast ease-out;
+	.navbar-nav{
+		transition: all $transition-speed-fast ease-out;
+	}
+	&:not(.scrolled):not(.show){
+		background-color: transparent !important;
+		box-shadow: none !important;
+		.navbar-nav{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
+}
+
+/* Styling for making background and shadow visible on collapse */
+.navbar-transparent{
+	transition: background-color $transition-speed-fast ease-out, box-shadow $transition-speed-fast ease-out;
+	&:not(.show){
+		background-color: transparent !important;
+		box-shadow: none !important;
+	}
+}

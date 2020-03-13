@@ -1,0 +1,43 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Image component styling.
+* ------------------------------------------------------------------------ */
+
+$img-overlay-light-opacity:         .35;
+$img-overlay-medium-opacity:        .55;
+$img-overlay-strong-opacity:        .75;
+
+.img-overlay{
+    position: relative;
+    overflow: hidden;
+    &:before{
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+    }
+    &.pattern-1:before{
+        background: url("../img/solid/overlay-pattern01.png") repeat;
+    }
+    &.pattern-2:before{
+        background: url("../img/solid/overlay-pattern02.png") repeat;
+    }
+    &.pattern-3:before{
+        background: url("../img/solid/overlay-pattern03.png") repeat;
+    }
+    &.pattern-4:before{
+        background: url("../img/solid/overlay-pattern04.png") repeat;
+    }
+    &.pattern-5:before{
+        background: url("../img/solid/overlay-pattern05.png") repeat;
+    }
+    &.overlay-light:before{
+        opacity: $img-overlay-light-opacity;
+    }
+    &.overlay-medium:before{
+        opacity: $img-overlay-medium-opacity;
+    }
+    &.overlay-strong:before{
+        opacity: $img-overlay-strong-opacity;
+    }
+}

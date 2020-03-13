@@ -1,0 +1,31 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Modal component styling.
+* ------------------------------------------------------------------------ */
+
+$modal-bg:				color("white");
+$modal-color:			color-text("white");
+
+$modal-border-width:	1px;
+$modal-border-color:	transparent;
+$modal-border-radius:	$border-radius;
+$modal-box-shadow:		$box-shadow;
+
+
+
+.modal-content{
+	background-color: $modal-bg;
+	color: $modal-color;
+	border-width: $modal-border-width;
+	border-color: $modal-border-color;
+	border-radius: $modal-border-radius;
+	box-shadow: $modal-box-shadow;
+}
+
+.modal-header{
+	border-bottom-color: transparent;
+}
+
+.modal-footer{
+	border-top-color: transparent;
+}

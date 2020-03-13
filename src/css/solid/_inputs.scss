@@ -1,0 +1,159 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Input component styling.
+* ------------------------------------------------------------------------ */
+
+$input-label-float-color:	#8e8e8e;
+
+$input-range-bg:			$custom-control-bg;
+$input-range-thumb-bg:		$custom-control-active-bg;
+
+$input-file-label-bg:		color("primary");
+$input-file-label-color:	color-text("primary");
+
+@import "mixins/_inputs";
+
+/* Mixins for creating form feedback variants */
+@mixin form-feedback-variant($color){
+	.form-control{
+		background-image: linear-gradient(0deg, $color 2px, rgba(0,0,0,0) 0), linear-gradient(0deg, $input-underline-bg 1px, hsla(0,0%,80%,0) 0);
+	}
+	.col-form-label, .custom-control, .form-check-label, .form-control-feedback, .form-control-label{
+		color: $color;
+	}
+}
+
+
+/* Text inputs */
+textarea.form-control, input.form-control, .custom-file-label, select.custom-select{
+	@include input-field();
+}
+
+
+/* Floating label */
+.form-group{
+	position: relative;
+	&.label-float{
+		position: relative;
+		padding-top: 32px;
+		label{
+			transition: all $input-transition-speed ease-in-out;
+			left: 0.2rem;
+			top: 2.4rem;
+			margin-bottom: 0;
+			position: absolute;
+			color: $input-label-float-color;
+		}
+		&.active{
+			label{
+				left: 0;
+				top: 0;
+				color: #333;
+			}
+		}
+	}
+}
+
+
+/* Contextual variants for inputs */
+.form-group.has-success,
+.custom-select.is-valid, .form-control.is-valid, .was-validated .custom-select:valid, .was-validated .form-control:valid{
+	@include input-field-variant(color("success"));
+}
+.form-group.has-info{
+	@include input-field-variant(color("info"));
+}
+.form-group.has-warning{
+	@include input-field-variant(color("warning"));
+}
+.form-group.has-danger,
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid, .form-control:invalid{
+	@include input-field-variant(color("danger"));
+}
+
+/* Fix default Bootstrap custom-select */
+.custom-select{
+	cursor: pointer;
+	&:focus{
+		box-shadow: none;
+	}
+}
+
+
+/* Fix default Bootstrap custom-range style across all browsers */
+.custom-range {
+	&:focus{
+		box-shadow: none;
+		&::-webkit-slider-thumb { box-shadow: none; }
+    	&::-moz-range-thumb     { box-shadow: none; }
+   		&::-ms-thumb            { box-shadow: none; }
+	}
+    &::-webkit-slider-thumb {
+    	cursor: e-resize; 
+        background: $input-range-thumb-bg;
+        &:active {
+            background: $input-range-thumb-bg;
+        }
+    }
+
+    &::-webkit-slider-runnable-track {
+        background: $input-range-bg;
+    }
+
+    &::-moz-range-thumb {
+    	cursor: e-resize; 
+        background: $input-range-thumb-bg;
+        &:active {
+            background: $input-range-thumb-bg;
+        }
+    }
+
+    &::-moz-range-track {
+        background: $input-range-bg;
+    }
+
+    &::-ms-thumb {
+    	cursor: e-resize; 
+        background: $input-range-thumb-bg;
+        &:active {
+            background: $input-range-thumb-bg;
+        }
+    }
+    &::-ms-fill-lower {
+        background: $input-range-bg;
+    }
+
+    &::-ms-fill-upper {
+        background: $input-range-bg;
+    }
+}
+
+
+
+/* File inputs */
+.custom-file{
+	.custom-file-input{
+		cursor: pointer;
+		&:focus, &:focus ~ .custom-file-label{
+			box-shadow: none;
+			background-size: 100% 100%, 100% 100%;
+		}
+	}
+	.custom-file-label{
+		min-width: 200px;
+		position: absolute;
+		&:after{
+			color: $input-file-label-color;
+			background-color: $input-file-label-bg;
+		}
+	}
+}
+
+
+/* Remove background and border from input group prefixes and affixes. */
+.input-group-prepend, .input-group-append{
+	.input-group-text{
+		background: transparent;
+		border: none;
+	}
+}

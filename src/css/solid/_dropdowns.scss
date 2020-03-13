@@ -1,0 +1,60 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Dropdown component styling.
+* ------------------------------------------------------------------------ */
+
+$dropdown-border-width:			0;
+$dropdown-border-radius:		$border-radius;
+$dropdown-box-shadow:			$box-shadow;
+
+$dropdown-item-active-bg:       $active-bg;
+$dropdown-item-active-color:    $active-color;
+
+.navbar-nav .dropdown-menu{
+	position:absolute;
+}
+
+.dropdown-item:active{
+	background-color: transparent;
+	color: inherit;
+}
+
+.dropdown, .btn-group, .input-group-prepend, .input-group-append{
+	transition-duration: 1.5s;
+	position: relative;
+	.dropdown-toggle{
+		&:after{
+			transition: all $transition-speed ease-in-out;
+			transform: rotateX(0deg);	
+		}
+	}
+	&.show{
+		.dropdown-toggle:after{
+			transform: rotateX(180deg)!important;	
+		}
+		.dropdown-menu:not(.inner){
+			top: 0;
+			position: absolute;
+			opacity: 1;
+			visibility: visible;
+			display: block;
+			transform: translate3d(0,35px,0) scale(1);
+		}
+	}
+	.dropdown-menu:not(.inner){
+		border-width: $dropdown-border-width;
+		border-radius: $dropdown-border-radius;
+		box-shadow: $dropdown-box-shadow;
+		transition: all $transition-speed ease-in-out;
+		opacity: 0;
+		top: 0;
+		visibility: hidden;
+		display: block;
+		transform: translate3d(0,35px,0) scale(0.1);
+		transform-origin: top left;
+		&.dropdown-menu-right{
+			transform-origin: top right;
+		}
+	}
+}
+

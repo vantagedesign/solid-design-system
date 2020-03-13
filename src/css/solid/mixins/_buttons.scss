@@ -1,0 +1,70 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Button mixins.
+* ------------------------------------------------------------------------ */
+
+$button-border-radius:          $border-radius;
+$button-border-width:           0;
+$button-outline-border-width:   1px;
+$button-disabled-opacity:       $disabled-opacity;
+
+/* Mixins for creating button variants */
+@mixin button-variant($background, $border, $color){
+    color: $color;
+    background-color: $background;
+    border: none;
+    transition: all ease-in-out $transition-speed;
+    &:not(:disabled):not(.disabled){
+        box-shadow: $box-shadow;
+        &:focus, &.focus{
+            color: $color;
+            box-shadow: $box-shadow;
+        }
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):hover,
+    .show > &.dropdown-toggle{
+        color: $color;
+        background-color: lighten($background, 2%);
+        box-shadow: $box-shadow-hover;
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active{
+        background-color: lighten($background, 5%);        
+    }
+    &:disabled, &.disabled{
+        color: $color;
+        background-color: $background;
+        opacity: $button-disabled-opacity;
+    }
+}
+
+@mixin button-outline-variant($background, $border, $color){
+    color: $border;
+    background-color: transparent;
+    border: $button-outline-border-width solid $border;
+    &:not(:disabled):not(.disabled){
+        box-shadow: $box-shadow-sm;
+        &:focus, &.focus{
+            box-shadow: $box-shadow-sm;
+        }
+    }
+    &:not(:disabled):not(.disabled):hover,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle{
+        background-color: scale-color($background, $alpha: -95%);
+        box-shadow: $box-shadow-sm-hover;
+        border-color: $border;
+        color: $border;
+    }
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active{
+        background-color: scale-color($background, $alpha: -90%);
+    }
+    &:disabled, &.disabled{
+        color: $border;
+        opacity: $button-disabled-opacity;
+    }
+}

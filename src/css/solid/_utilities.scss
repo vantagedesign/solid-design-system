@@ -1,0 +1,61 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Utilities styling.
+* ------------------------------------------------------------------------ */
+
+/* Height utilities */
+.height-small{
+	height: 25vh;
+	min-height: 200px;
+	max-height: 100vh;
+}
+.height-medium{
+	height: 50vh;
+	min-height: 200px;
+	max-height: 100vh;
+}
+.height-large{
+	height: 75vh;
+	min-height: 200px;
+	max-height: 100vh;
+}
+.height-full{
+	height: 100vh;
+	min-height: 200px;
+	max-height: 100vh;
+}
+
+/* Element fill utilities */
+.absolute-fill{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index:-1;
+}
+
+.absolute-spread{
+	position: absolute;
+	height: auto;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+/* Offset anchor */
+.offset-anchor{
+	display: block;
+	position: relative;
+	top: $offset-anchor;
+	visibility: hidden;	
+}
+
+/* Background property utilities */
+.bg-cover{
+	background-size: cover !important;
+}
+.bg-center{
+	background-position: center center !important;
+}
+

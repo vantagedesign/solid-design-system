@@ -1,0 +1,82 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Nav component styling.
+* ------------------------------------------------------------------------ */
+
+$navs-tab-bg:						transparent;
+$navs-tab-color:					color("primary");
+$navs-tab-active-bg:				white;
+$navs-tab-border-color:				color("primary");
+$navs-tab-border-width:				1px;
+$navs-tab-radius:					$border-radius;
+
+$navs-pill-bg:						transparent;
+$navs-pill-color:					color("primary");
+$navs-pill-active-bg:				color("primary");
+$navs-pill-active-color:			color-text("primary");
+$navs-pill-radius:					$border-radius;
+
+$breadcrumb-bg:						transparent;
+$breadcrumb-color:					color("primary");
+
+/* Tabs & pills */
+.nav-tabs, .nav-pills{
+	.nav-link{
+		text-align: center;
+ 		transition: all $transition-speed-fast ease-in;
+	}
+}
+
+.nav-tabs{
+	border-bottom-width: $navs-tab-border-width;
+	border-bottom-color: $navs-tab-border-color;
+	.nav-item{
+		margin-bottom: (-$navs-tab-border-width);
+	}
+ 	.nav-link{
+		background-color: $navs-tab-bg;
+		color: $navs-tab-color;
+		border-top-left-radius: $navs-tab-radius;
+		border-top-right-radius: $navs-tab-radius;
+		border-width: $navs-tab-border-width;
+		&.active{
+			background-color: $navs-tab-active-bg;
+			color: darken($navs-tab-color, 10%);
+			border-color: $navs-tab-border-color;
+			border-bottom-color: transparent;
+			border-width: $navs-tab-border-width;
+			box-shadow: 0px -5px 8px 0px rgba(0,0,0,0.075);
+		}
+   	}
+}
+
+.nav-pills{
+	.nav-link{
+		background-color: $navs-pill-bg;
+		color: $navs-pill-color;
+		border-radius: $navs-pill-radius;
+		&:hover{
+			background-color: rgba(0,0,0,0.04);
+		}
+		&.active{
+			background-color: $navs-pill-active-bg;
+			color: $navs-pill-active-color;
+			box-shadow: $box-shadow;
+		}
+	}
+}
+
+
+
+
+
+/* Breadcrumbs */
+.breadcrumb{
+	background-color: $breadcrumb-bg;
+	.breadcrumb-item{
+		color: $breadcrumb-color;
+		&.active{
+			color: darken($breadcrumb-color, 10%);
+		}
+	}
+}

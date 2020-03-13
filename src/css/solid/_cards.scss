@@ -1,0 +1,73 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Card component styling.
+* ------------------------------------------------------------------------ */
+
+$card-border-radius:      $border-radius;
+$card-border-width:       0;
+$card-border-color:       $neutral-gray;
+
+$card-img-border-radius:  $border-radius;
+
+/* Global card styling */
+.card{
+    background-color: transparent;
+    border-color: $card-border-color;
+    border-width: $card-border-width;
+    border-radius: $card-border-radius;
+    position: relative;
+    .card-img-top, .card-img-bottom, .card-img{
+        border-radius: $card-img-border-radius;
+        height:auto;
+        min-height:0.01px;
+    }
+    .card-header{
+        background-color: transparent;
+        border-bottom: none;
+    }
+    .card-footer{
+        background-color: transparent;
+        border-top: none;
+    }
+}
+
+/* Rotating card type */
+.card.card-rotate{
+    position: relative;
+    perspective: 750px;
+    margin-bottom: 30px;
+    border: none;
+    .front, .back{
+        width: 100%;
+        height: 100%;
+        transition: transform ease-in-out 0.75s;
+        backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        transform-style: preserve-3d;
+        background-color: #FFF;
+    }
+    .front{
+        position: relative;
+        transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    .back{
+        top: 0;
+        left: 0;
+        height: 100%;
+        position: absolute;
+        transform: rotateY(180deg) rotateX(0) rotateZ(0);
+    }
+    &.flipped .back{
+        transform: rotateY(0) rotateX(0) rotateZ(0);
+    }
+    &.flipped .front{
+        transform: rotateY(-180deg) rotateX(0) rotateZ(0);
+    }
+}
+
+/* Inverse card type */
+.card.card-inverse{
+    .card-img-overlay{
+        background-color: rgba(0,0,0,0.5);
+    }
+}
