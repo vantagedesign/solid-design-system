@@ -1,0 +1,29 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Fixes.
+* ------------------------------------------------------------------------ */
+
+/* Fix containers having no width on smallest media size */
+@media (max-width: 574px){
+	.container {
+		width: 100%;
+	}
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+a{
+	color: inherit;
+}
+
+.text-white a:hover{
+	color: darken(white, 15%);
+}
+
+.vh-100{
+	height: 100vh !important;
+	height: calc(var(--vh, 1vh) * 100) !important;	
+}

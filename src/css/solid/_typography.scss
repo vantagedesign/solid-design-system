@@ -1,0 +1,54 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Typography component styling.
+* ------------------------------------------------------------------------ */
+
+$type-body-font:                $body-font-family;
+$type-body-color:               $body-color;
+
+$type-paragraph-color:          inherit;
+
+$type-headings-font:            $headings-font-family;
+$type-headings-color:           $headings-color;
+
+$type-display-font:             $headings-font-family;
+$type-display-color:            $display-color;
+
+$type-link-decoration:          $link-decoration;
+$type-link-color:               $link-color;
+$type-link-hover-color:         $link-hover-color;
+$type-link-hover-decoration:    $link-hover-decoration;     
+
+/* Global typography */
+body{
+    font-family: $type-body-font;
+    color: $type-body-color;
+}
+
+/* Headings styling */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h2, .h3, .h4, .h5, .h6{
+    font-family: $type-headings-font;
+    color: $type-headings-color;
+}
+
+/* Display headings styling */
+.display-1, .display-2, .display-3, .display-4{
+    font-family: $type-display-font;
+    color: $type-display-color;
+}
+
+/* Paragraph styling */
+p{
+    color: $type-paragraph-color;
+}
+
+/* Link styling */
+a{
+    color: $type-link-color;
+    text-decoration: $type-link-decoration;
+    &:hover{
+        color: $type-link-hover-color;
+        text-decoration: $type-link-hover-decoration;
+    }
+}

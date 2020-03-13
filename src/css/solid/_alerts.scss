@@ -1,0 +1,42 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Alert component styling.
+* ------------------------------------------------------------------------ */
+
+$alert-border-radius:      $border-radius;
+$alert-border-width:       0;
+$alert-box-shadow:         $box-shadow;
+
+/* Mixin for creating alert variants */
+@mixin alert-variant($background, $border, $color) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+    hr {
+        border-top-color: darken($background, 10%);
+    }
+    .alert-link {
+        color: darken($background, 35%);
+    }
+}
+
+
+
+/* General style for all alerts */
+.alert{
+    border: none;
+    border-radius: $alert-border-radius;
+    border-width: $alert-border-width;
+    color: white;
+    box-shadow: $alert-box-shadow;
+}
+
+
+
+/* Create an alert variant for every color */
+@each $color, $value in $colors {
+    .alert-#{$color} {
+        /* Create alert variant from mixin: alert-variant($background, $border, $color)) */
+        @include alert-variant(color($color), color($color), color-text($color));
+    }
+}

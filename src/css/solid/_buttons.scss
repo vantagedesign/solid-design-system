@@ -1,0 +1,66 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Button component styling.
+* ------------------------------------------------------------------------ */
+
+@import "mixins/_buttons";
+
+/* General button styling */
+.btn{
+    position: relative;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: $button-border-radius;
+    &:not(:disabled){
+        cursor: pointer;
+    }
+    &:focus, &.focus{
+        box-shadow: none !important;
+        color: default;
+    }
+    &:disabled, &.disabled{
+        cursor: default;
+    }
+    &.btn-round{
+        padding: 8px 12px 8px 12px !important;
+        border-radius: 100px;
+    }
+    &.btn-lg.btn-round{
+        padding: 8px 14px 8px 14px !important;
+    }
+    &.btn-link{
+        color: color("primary");
+        &:hover{
+            color: darken(color("primary"), 15%);
+            text-decoration: none;
+        }
+    }
+    &.btn-icon{
+        padding: 4px 2px 4px 2px;
+        font-size: 22px;
+    }
+}
+
+.btn-group{
+    box-shadow: $box-shadow;
+    .btn{
+        box-shadow: none !important;
+    }
+}
+
+
+/* Create a button variant for every color */
+@each $color, $value in $colors {
+    .btn-#{$color} {
+        /* button-variant($background, $border, $color)) */
+        @include button-variant(color($color), color($color), color-text($color));
+    }
+}
+
+@each $color, $value in $colors {
+    .btn-outline-#{$color} {
+        /* button-outline-variant($background, $border, $color)) */
+        @include button-outline-variant(color($color), color($color), color-text($color));
+    }
+}

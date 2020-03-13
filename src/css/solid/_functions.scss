@@ -1,0 +1,18 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Functions.
+* ------------------------------------------------------------------------ */
+
+
+/* Retrieve a color from the color map */
+@function color($key: "primary") {
+    @return map-get($colors, $key);
+}
+
+@function color-text($key: "primary") {
+    @return map-get($colors-text, $key);
+}
+
+@function color-social($key: "comments") {
+    @return map-get($colors-social, $key);
+}

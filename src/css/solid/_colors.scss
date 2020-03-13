@@ -1,0 +1,57 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Color styling.
+* ------------------------------------------------------------------------ */
+
+body{
+	color: $body-color;
+	background-color: $body-bg;
+}
+
+
+/* Mixins for creating background and text variants */
+@mixin background-variant($background){
+    background-color: $background !important;
+}
+
+@mixin text-variant($color){
+	color: $color !important;
+}
+
+@mixin border-variant($border){
+	border-color: $border !important;
+}
+
+
+
+/* Create a background for every color */
+@each $color, $value in $colors {
+  .bg-#{$color}, .img-overlay.bg-#{$color}:before {
+    /* Create background variant from mixin: background-variant($background)) */
+    @include background-variant(color($color));
+  }
+}
+
+/* Create a text variant for every color */
+@each $color, $value in $colors {
+  .text-#{$color} {
+    /* Create text variant from mixin: text-variant($color)) */
+    @include text-variant(color($color));
+  }
+}
+
+/* Create a border variant for every color */
+@each $color, $value in $colors {
+  .border-#{$color} {
+    /* Create border variant from mixin: border-variant($color)) */
+    @include border-variant(color($color));
+  }
+}
+
+
+
+
+/* Manual color defines */
+.bg-black, .img-overlay.bg-black::before{
+	background-color:black;
+}

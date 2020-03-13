@@ -1,0 +1,15 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*	Root styling.
+* ------------------------------------------------------------------------ */
+
+:root {
+
+    @each $color, $value in $colors {
+        --#{$color}: #{$value};
+    }
+
+    --font-family-sans-serif: #{inspect($font-family-sans-serif)};
+    --font-family-monospace: #{inspect($font-family-monospace)};
+
+}

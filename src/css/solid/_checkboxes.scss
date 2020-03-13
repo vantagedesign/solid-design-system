@@ -1,0 +1,241 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   Checkbox component styling.
+* ------------------------------------------------------------------------ */
+
+$custom-control-base-size:          18px;
+$custom-control-disabled-opacity:   $disabled-opacity;
+
+$checkbox-bg:                       darken($custom-control-bg, 30%);
+$checkbox-active-bg:                $custom-control-active-bg;
+$checkbox-border-radius:            $border-radius;
+$checkbox-border-width:             2px;
+$checkbox-transition-speed:         $transition-speed-fast;
+
+$radio-bg:                          darken($custom-control-bg, 30%);
+$radio-active-bg:                   $custom-control-active-bg;
+$radio-border-width:                2px;
+$radio-transition-speed:            $transition-speed-fast;
+
+$switch-bg:                         darken($custom-control-bg, 15%);
+$switch-active-bg:                  $custom-control-active-bg;
+$switch-transition-speed:           $transition-speed-fast;
+
+
+.custom-control-input:checked ~ .custom-control-label:before{
+    background-color: $checkbox-active-bg
+}
+
+.custom-control{
+    input:disabled ~ .custom-control-label, input.disabled ~ .custom-control-label{
+        cursor: default;
+        opacity: $custom-control-disabled-opacity;
+    }
+    input:not(:disabled):not(.disabled) ~ .custom-control-label{
+        cursor: pointer;
+    }
+    .custom-control-label{
+        min-height: 1rem;
+        &:before{
+            background-color: $checkbox-bg;
+        }
+        &:before, &:after{
+            border: none;
+        }
+    }
+    .custom-control-input{
+        &:checked ~ .custom-control-label:before,
+        &:active ~ .custom-control-label:before,
+        > input:focus + .custom-control-label{
+            box-shadow:none
+        }
+        &:focus ~ .custom-control-label:before{
+            border: none;
+            box-shadow: none;            
+        }
+    }
+}
+
+.form-check{
+    margin-bottom: 7px;
+}
+
+
+.custom-checkbox{
+    .custom-control-input:not(:checked):focus ~ .custom-control-label::before{
+        border: $checkbox-border-width solid $checkbox-bg;
+        box-shadow: none;
+    }
+    .custom-control-input:active ~ .custom-control-label:before,
+    .custom-control-label:before{
+        background-color: transparent;
+        border-radius: $checkbox-border-radius;
+        border: $checkbox-border-width solid  $checkbox-bg;
+    }
+    .custom-control-input ~ .custom-control-label{
+        &::before, &::after{
+            transition: all $checkbox-transition-speed;
+            height: $custom-control-base-size;
+            width: $custom-control-base-size;
+            top: 2px;
+            right: 0;
+            margin-left: 0;
+            transform: rotate(0);
+        }
+        &::after{
+            opacity: 0;
+            border: $checkbox-border-width solid $checkbox-bg;       
+        }
+    }
+    .custom-control-input:checked ~ .custom-control-label{
+        &:before{
+            border-top: none;
+            border-left: none;
+            border-right: $checkbox-border-width solid $checkbox-active-bg;
+            border-bottom: $checkbox-border-width solid $checkbox-active-bg;
+            height: 1.2rem;
+            width: 0.6rem;
+            top: -0.1rem;
+            margin-left: 0.3rem;
+            border-radius: 0;
+            transform: rotate(35deg);
+            background-color: transparent;
+        }
+        &:after{
+            background-image: none;
+        }
+    }
+    input:disabled ~ .custom-control-label:before, input.disabled ~ .custom-control-label:before{
+        background-color: transparent;
+    }
+}
+
+.custom-checkbox-filled{
+    .custom-control-input:not(:checked):focus ~ .custom-control-label::before{
+        border: $checkbox-border-width solid $checkbox-bg;
+        box-shadow: none;
+    }
+    .custom-control-input:active ~ .custom-control-label:before,
+    .custom-control-label:before{
+        background-color: transparent;
+        border-radius: $checkbox-border-radius;
+        border: $checkbox-border-width solid $checkbox-bg;
+    }
+    .custom-control-input ~ .custom-control-label{
+        &::before, &::after{
+            transition: all $checkbox-transition-speed;
+            height: $custom-control-base-size;
+            width: $custom-control-base-size;
+            top: 2px;
+            right: 0;
+            margin-left: 0;
+            transform: rotate(0);
+        }
+        &::after{
+            border-top: none;
+            border-left: none;
+            border-right: $checkbox-border-width solid $checkbox-bg;
+            border-bottom: $checkbox-border-width solid $checkbox-bg;
+            border-radius: $checkbox-border-radius;
+        }
+    }
+    .custom-control-input:checked ~ .custom-control-label{
+        &:before{
+            background-color: $checkbox-active-bg;
+            border-color: $checkbox-active-bg;
+        }
+        &:after{
+            background-image: none;
+            border-top: none;
+            border-left: none;
+            border-right: $checkbox-border-width solid white;
+            border-bottom: $checkbox-border-width solid white;
+            height: $custom-control-base-size * 0.75;
+            width: $custom-control-base-size * 0.35;
+            top: $custom-control-base-size * 0.35 * 0.5;
+            margin-left: $custom-control-base-size * 0.75 * 0.45;
+            border-radius: 0;
+            transform: rotate(35deg);
+            background-color: transparent;
+        }
+    }
+    input:disabled ~ .custom-control-label:before, input.disabled ~ .custom-control-label:before{
+        background-color: transparent;
+    }  
+}
+
+
+.custom-radio{
+    .custom-control-input:not(:checked):focus ~ .custom-control-label::before{
+        border: $radio-border-width solid $radio-bg;
+        box-shadow: none;
+    }
+    .custom-control-input:active ~ .custom-control-label:before,
+    .custom-control-label:before{
+        background-color: transparent;
+        border-radius: 100%;
+    }
+    .custom-control-input ~ .custom-control-label{
+        position: relative;
+        &:before, &:after{
+            height: $custom-control-base-size;
+            width: $custom-control-base-size;
+            top: 2px;
+            right: 0;
+            border-radius: 100%;
+        }
+        &:before{
+            transition: all $radio-transition-speed ease;
+            transform: scale(0);
+            background-color: $radio-active-bg;
+        }
+        &:after{
+            border: $radio-border-width solid  $radio-bg;
+        }
+    }
+    .custom-control-input:checked ~ .custom-control-label{
+        position: relative;
+        &:before{
+            transform: scale(0.6);
+        }
+        &:after{
+            background-image: none;
+            background-color: transparent;
+            border-color: $radio-active-bg;
+        }
+    }
+}
+
+
+
+.custom-switch{
+    padding-left: 3rem;
+    .custom-control-input ~ .custom-control-label{
+        &:before{
+            opacity: 0.7;
+            background-color: $switch-bg;
+            width: 1.75rem;
+            height: 0.6rem;
+            left: -2.5rem;
+            top: 0.45rem;
+        }
+        &:after{
+            transition: all $switch-transition-speed ease;
+            background-color: darken($switch-bg, 10%);
+            height: $custom-control-base-size;
+            width: $custom-control-base-size;
+            top: 0.2rem;
+            border-radius: 100%;
+            left: -2.75rem;
+        }
+    }
+    .custom-control-input:checked ~ .custom-control-label{
+        &::before{
+            background-color: $switch-bg;
+        }
+        &::after{
+            background-color: $switch-active-bg;
+            left: -2.25rem;
+        }
+    }
+}

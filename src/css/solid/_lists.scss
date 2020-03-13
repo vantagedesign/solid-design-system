@@ -1,0 +1,82 @@
+/* -------------------------------------------------------------------------
+*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENS
+*   List component styling.
+* ------------------------------------------------------------------------ */
+
+$listgroup-item-bg:                 none;
+$listgroup-item-active-bg:          color("primary");
+$listgroup-item-active-color:       color-text("primary");
+$listgroup-item-active-box-shadow:  $box-shadow;
+
+$listgroup-border-radius:           $border-radius;
+
+/* Mixin for creating list group item variants */
+@mixin listgroupitem-variant($background, $border, $color) {
+	color: $color;
+    background-color: $background;
+    border: none;
+    &.list-group-item-action{
+    	&.disabled:hover, &:disabled:hover{
+	    	color: $color;
+	    	background-color: $background;
+    	}
+	    &:not(:disabled):not(.disabled):hover,
+	    &:not(:disabled):not(.disabled):active,
+	    &:not(:disabled):not(.disabled).active{
+	    	border: none;
+	        color: $color;
+	        background-color: darken($background, 15%)
+	    }
+    }
+    &:disabled, &.disabled{
+        color: $color;
+        background-color: $background;
+        opacity: .65;
+        cursor: default;
+    }
+    &:hover, &:focus{
+    	z-index: initial;
+    }
+}
+
+.list-group{
+    border-radius: $listgroup-border-radius;
+}
+
+.list-group-item{
+    background: $listgroup-item-bg;
+    &:hover, &:focus{
+    	z-index: initial;
+    }
+}
+
+/* Create a list group item variant for every color */
+@each $color, $value in $colors {
+    .list-group-item-#{$color} {
+        /* Create list group item  variant from mixin: listgroupitem-variant($background, $border, $color)) */
+        @include listgroupitem-variant(color($color), color($color), color-text($color));
+    }
+}
+
+
+
+.list-group-item.active {
+    z-index: 2;
+    color: $listgroup-item-active-color;
+    background-color: $listgroup-item-active-bg;
+    border: none;
+    box-shadow: $box-shadow;
+}
+
+.widget{
+	ul{
+		padding-left:0;
+		list-style: none;
+		li {
+			margin-bottom: .5rem;
+			a{
+				color: inherit;
+		}
+		}
+	}
+}
