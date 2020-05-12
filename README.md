@@ -7,7 +7,7 @@ Solid design system is a feature-complete design system, inspired by Google's Ma
 Besides a beautiful design and a ton of components, Solid feautures a powerful build workflow, powered by GulpJS. This enables you to write stylesheets with SASS CSS (SCSS) and provides concatenated and minified CSS, JavaScript and even images, to make your project as fast as possible for the end user. All features of Solid are extensively documented.
 
 ### Components
-Solid features all of the standard Bootstrap 4 components and syntax, and more. Therefore, you can use your existing knowledge of Bootstrap. Use components such as butons, alerts, cards, dropdowns, navbars, navs, progress, and much more. 
+Solid features all of the standard Bootstrap 4 components and syntax, and more. Therefore, you can use your existing knowledge of Bootstrap. Use components such as buttons, alerts, cards, dropdowns, navbars, navs, progress, and much more. 
 
 Useful extensions have been included, such as flippable cards, a navbar that changes style on scrolling, and more.
 
