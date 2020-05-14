@@ -1,6 +1,6 @@
 /* Load Solid */
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Stylesheet module loader.
 * ------------------------------------------------------------------------ */
 @font-face {
@@ -12,12 +12,12 @@
 
 /* Load functions & variables */
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Functions.
 * ------------------------------------------------------------------------ */
 /* Retrieve a color from the color map */
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Variables.
 * ------------------------------------------------------------------------ */
 /* ---------------
@@ -36,9 +36,9 @@ Inputs
 --------------- */
 /* Load Bootstrap */
 /*!
- * Bootstrap v4.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 The Bootstrap Authors
- * Copyright 2011-2019 Twitter, Inc.
+ * Bootstrap v4.5.0 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
@@ -56,7 +56,7 @@ Inputs
   --gray: #6c757d;
   --gray-dark: #343a40;
   --primary: #6200ee;
-  --secondary: #04dac6;
+  --secondary: #8367C7;
   --c3: #9b59b6;
   --c4: #34495e;
   --c5: #e67e22;
@@ -69,7 +69,7 @@ Inputs
   --dark: #343a40;
   --black: black;
   --primary: #6200ee;
-  --secondary: #04dac6;
+  --secondary: #8367C7;
   --success: #5cb85c;
   --info: #5bc0de;
   --warning: #f0ad4e;
@@ -208,7 +208,8 @@ samp {
 pre {
   margin-top: 0;
   margin-bottom: 1rem;
-  overflow: auto; }
+  overflow: auto;
+  -ms-overflow-style: scrollbar; }
 
 figure {
   margin: 0 0 1rem; }
@@ -263,6 +264,9 @@ button,
 select {
   text-transform: none; }
 
+[role="button"] {
+  cursor: pointer; }
+
 select {
   word-wrap: normal; }
 
@@ -290,12 +294,6 @@ input[type="checkbox"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0; }
-
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox; }
 
 textarea {
   overflow: auto;
@@ -573,6 +571,7 @@ pre {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  min-width: 0;
   max-width: 100%; }
 
 .row-cols-1 > * {
@@ -805,6 +804,7 @@ pre {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%; }
   .row-cols-sm-1 > * {
     -webkit-box-flex: 0;
@@ -994,6 +994,7 @@ pre {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%; }
   .row-cols-md-1 > * {
     -webkit-box-flex: 0;
@@ -1183,6 +1184,7 @@ pre {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%; }
   .row-cols-lg-1 > * {
     -webkit-box-flex: 0;
@@ -1372,6 +1374,7 @@ pre {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    min-width: 0;
     max-width: 100%; }
   .row-cols-xl-1 > * {
     -webkit-box-flex: 0;
@@ -1615,19 +1618,19 @@ pre {
 .table-secondary,
 .table-secondary > th,
 .table-secondary > td {
-  background-color: #b9f5ef; }
+  background-color: #dcd4ef; }
 
 .table-secondary th,
 .table-secondary td,
 .table-secondary thead th,
 .table-secondary tbody + tbody {
-  border-color: #7cece1; }
+  border-color: #bfb0e2; }
 
 .table-hover .table-secondary:hover {
-  background-color: #a3f2ea; }
+  background-color: #cdc1e8; }
   .table-hover .table-secondary:hover > td,
   .table-hover .table-secondary:hover > th {
-    background-color: #a3f2ea; }
+    background-color: #cdc1e8; }
 
 .table-success,
 .table-success > th,
@@ -1864,6 +1867,14 @@ pre {
   .form-control:disabled, .form-control[readonly] {
     background-color: #e9ecef;
     opacity: 1; }
+
+input[type="date"].form-control,
+input[type="time"].form-control,
+input[type="datetime-local"].form-control,
+input[type="month"].form-control {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
 
 select.form-control:focus::-ms-value {
   color: #495057;
@@ -2253,7 +2264,6 @@ textarea.form-control {
   color: #343a40;
   text-align: center;
   vertical-align: middle;
-  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2281,6 +2291,8 @@ textarea.form-control {
             box-shadow: 0 0 0 0.2rem rgba(98, 0, 238, 0.25); }
   .btn.disabled, .btn:disabled {
     opacity: 0.65; }
+  .btn:not(:disabled):not(.disabled) {
+    cursor: pointer; }
 
 a.btn.disabled,
 fieldset:disabled a.btn {
@@ -2315,32 +2327,32 @@ fieldset:disabled a.btn {
               box-shadow: 0 0 0 0.2rem rgba(122, 38, 241, 0.5); }
 
 .btn-secondary {
-  color: #212529;
-  background-color: #04dac6;
-  border-color: #04dac6; }
+  color: white;
+  background-color: #8367C7;
+  border-color: #8367C7; }
   .btn-secondary:hover {
     color: white;
-    background-color: #03b4a4;
-    border-color: #03a899; }
+    background-color: #6c4bbd;
+    border-color: #6544b7; }
   .btn-secondary:focus, .btn-secondary.focus {
     color: white;
-    background-color: #03b4a4;
-    border-color: #03a899;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(8, 191, 174, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(8, 191, 174, 0.5); }
+    background-color: #6c4bbd;
+    border-color: #6544b7;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(150, 126, 207, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(150, 126, 207, 0.5); }
   .btn-secondary.disabled, .btn-secondary:disabled {
-    color: #212529;
-    background-color: #04dac6;
-    border-color: #04dac6; }
+    color: white;
+    background-color: #8367C7;
+    border-color: #8367C7; }
   .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
   .show > .btn-secondary.dropdown-toggle {
     color: white;
-    background-color: #03a899;
-    border-color: #039b8d; }
+    background-color: #6544b7;
+    border-color: #6040ae; }
     .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-secondary.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(8, 191, 174, 0.5);
-              box-shadow: 0 0 0 0.2rem rgba(8, 191, 174, 0.5); }
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(150, 126, 207, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(150, 126, 207, 0.5); }
 
 .btn-success {
   color: white;
@@ -2534,27 +2546,27 @@ fieldset:disabled a.btn {
               box-shadow: 0 0 0 0.2rem rgba(98, 0, 238, 0.5); }
 
 .btn-outline-secondary {
-  color: #04dac6;
-  border-color: #04dac6; }
+  color: #8367C7;
+  border-color: #8367C7; }
   .btn-outline-secondary:hover {
-    color: #212529;
-    background-color: #04dac6;
-    border-color: #04dac6; }
+    color: white;
+    background-color: #8367C7;
+    border-color: #8367C7; }
   .btn-outline-secondary:focus, .btn-outline-secondary.focus {
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(4, 218, 198, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(4, 218, 198, 0.5); }
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(131, 103, 199, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(131, 103, 199, 0.5); }
   .btn-outline-secondary.disabled, .btn-outline-secondary:disabled {
-    color: #04dac6;
+    color: #8367C7;
     background-color: transparent; }
   .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-secondary.dropdown-toggle {
-    color: #212529;
-    background-color: #04dac6;
-    border-color: #04dac6; }
+    color: white;
+    background-color: #8367C7;
+    border-color: #8367C7; }
     .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
     .show > .btn-outline-secondary.dropdown-toggle:focus {
-      -webkit-box-shadow: 0 0 0 0.2rem rgba(4, 218, 198, 0.5);
-              box-shadow: 0 0 0 0.2rem rgba(4, 218, 198, 0.5); }
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(131, 103, 199, 0.5);
+              box-shadow: 0 0 0 0.2rem rgba(131, 103, 199, 0.5); }
 
 .btn-outline-success {
   color: #5cb85c;
@@ -2702,9 +2714,7 @@ fieldset:disabled a.btn {
     color: #4300a2;
     text-decoration: none; }
   .btn-link:focus, .btn-link.focus {
-    text-decoration: none;
-    -webkit-box-shadow: none;
-            box-shadow: none; }
+    text-decoration: none; }
   .btn-link:disabled, .btn-link.disabled {
     color: #6c757d;
     pointer-events: none; }
@@ -3078,8 +3088,9 @@ input[type="button"].btn-block {
   .input-group > .custom-file {
     position: relative;
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 0%;
-            flex: 1 1 0%;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    width: 1%;
     min-width: 0;
     margin-bottom: 0; }
     .input-group > .form-control + .form-control,
@@ -3967,7 +3978,7 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.1); }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 .navbar-light .navbar-text {
   color: rgba(0, 0, 0, 0.5); }
@@ -3999,7 +4010,7 @@ input[type="button"].btn-block {
   border-color: rgba(255, 255, 255, 0.1); }
 
 .navbar-dark .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
 
 .navbar-dark .navbar-text {
   color: rgba(255, 255, 255, 0.5); }
@@ -4026,12 +4037,17 @@ input[type="button"].btn-block {
   .card > hr {
     margin-right: 0;
     margin-left: 0; }
-  .card > .list-group:first-child .list-group-item:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px; }
-  .card > .list-group:last-child .list-group-item:last-child {
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px; }
+  .card > .list-group {
+    border-top: inherit;
+    border-bottom: inherit; }
+    .card > .list-group:first-child {
+      border-top-width: 0;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px; }
+    .card > .list-group:last-child {
+      border-bottom-width: 0;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px; }
 
 .card-body {
   -webkit-box-flex: 1;
@@ -4211,22 +4227,23 @@ input[type="button"].btn-block {
   background-color: #e9ecef;
   border-radius: 3px; }
 
-.breadcrumb-item + .breadcrumb-item {
-  padding-left: 0.5rem; }
-  .breadcrumb-item + .breadcrumb-item::before {
-    display: inline-block;
-    padding-right: 0.5rem;
-    color: #6c757d;
-    content: "/"; }
-
-.breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: underline; }
-
-.breadcrumb-item + .breadcrumb-item:hover::before {
-  text-decoration: none; }
-
-.breadcrumb-item.active {
-  color: #6c757d; }
+.breadcrumb-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem; }
+    .breadcrumb-item + .breadcrumb-item::before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      color: #6c757d;
+      content: "/"; }
+  .breadcrumb-item + .breadcrumb-item:hover::before {
+    text-decoration: underline; }
+  .breadcrumb-item + .breadcrumb-item:hover::before {
+    text-decoration: none; }
+  .breadcrumb-item.active {
+    color: #6c757d; }
 
 .pagination {
   display: -webkit-box;
@@ -4349,15 +4366,15 @@ input[type="button"].btn-block {
             box-shadow: 0 0 0 0.2rem rgba(98, 0, 238, 0.5); }
 
 .badge-secondary {
-  color: #212529;
-  background-color: #04dac6; }
+  color: white;
+  background-color: #8367C7; }
   a.badge-secondary:hover, a.badge-secondary:focus {
-    color: #212529;
-    background-color: #03a899; }
+    color: white;
+    background-color: #6544b7; }
   a.badge-secondary:focus, a.badge-secondary.focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.2rem rgba(4, 218, 198, 0.5);
-            box-shadow: 0 0 0 0.2rem rgba(4, 218, 198, 0.5); }
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(131, 103, 199, 0.5);
+            box-shadow: 0 0 0 0.2rem rgba(131, 103, 199, 0.5); }
 
 .badge-success {
   color: white;
@@ -4471,13 +4488,13 @@ input[type="button"].btn-block {
     color: #1e0049; }
 
 .alert-secondary {
-  color: #027167;
-  background-color: #cdf8f4;
-  border-color: #b9f5ef; }
+  color: #443667;
+  background-color: #e6e1f4;
+  border-color: #dcd4ef; }
   .alert-secondary hr {
-    border-top-color: #a3f2ea; }
+    border-top-color: #cdc1e8; }
   .alert-secondary .alert-link {
-    color: #013f39; }
+    color: #2e2446; }
 
 .alert-success {
   color: #306030;
@@ -4551,6 +4568,7 @@ input[type="button"].btn-block {
   display: flex;
   height: 1rem;
   overflow: hidden;
+  line-height: 0;
   font-size: 0.75rem;
   background-color: #e9ecef;
   border-radius: 3px; }
@@ -4613,7 +4631,8 @@ input[type="button"].btn-block {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-left: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  border-radius: 3px; }
 
 .list-group-item-action {
   width: 100%;
@@ -4635,11 +4654,11 @@ input[type="button"].btn-block {
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.125); }
   .list-group-item:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px; }
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit; }
   .list-group-item:last-child {
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px; }
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit; }
   .list-group-item.disabled, .list-group-item:disabled {
     color: #6c757d;
     pointer-events: none;
@@ -4660,18 +4679,18 @@ input[type="button"].btn-block {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row; }
-  .list-group-horizontal .list-group-item:first-child {
+  .list-group-horizontal > .list-group-item:first-child {
     border-bottom-left-radius: 3px;
     border-top-right-radius: 0; }
-  .list-group-horizontal .list-group-item:last-child {
+  .list-group-horizontal > .list-group-item:last-child {
     border-top-right-radius: 3px;
     border-bottom-left-radius: 0; }
-  .list-group-horizontal .list-group-item.active {
+  .list-group-horizontal > .list-group-item.active {
     margin-top: 0; }
-  .list-group-horizontal .list-group-item + .list-group-item {
+  .list-group-horizontal > .list-group-item + .list-group-item {
     border-top-width: 1px;
     border-left-width: 0; }
-    .list-group-horizontal .list-group-item + .list-group-item.active {
+    .list-group-horizontal > .list-group-item + .list-group-item.active {
       margin-left: -1px;
       border-left-width: 1px; }
 
@@ -4681,18 +4700,18 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; }
-    .list-group-horizontal-sm .list-group-item:first-child {
+    .list-group-horizontal-sm > .list-group-item:first-child {
       border-bottom-left-radius: 3px;
       border-top-right-radius: 0; }
-    .list-group-horizontal-sm .list-group-item:last-child {
+    .list-group-horizontal-sm > .list-group-item:last-child {
       border-top-right-radius: 3px;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-sm .list-group-item.active {
+    .list-group-horizontal-sm > .list-group-item.active {
       margin-top: 0; }
-    .list-group-horizontal-sm .list-group-item + .list-group-item {
+    .list-group-horizontal-sm > .list-group-item + .list-group-item {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-sm .list-group-item + .list-group-item.active {
+      .list-group-horizontal-sm > .list-group-item + .list-group-item.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
@@ -4702,18 +4721,18 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; }
-    .list-group-horizontal-md .list-group-item:first-child {
+    .list-group-horizontal-md > .list-group-item:first-child {
       border-bottom-left-radius: 3px;
       border-top-right-radius: 0; }
-    .list-group-horizontal-md .list-group-item:last-child {
+    .list-group-horizontal-md > .list-group-item:last-child {
       border-top-right-radius: 3px;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-md .list-group-item.active {
+    .list-group-horizontal-md > .list-group-item.active {
       margin-top: 0; }
-    .list-group-horizontal-md .list-group-item + .list-group-item {
+    .list-group-horizontal-md > .list-group-item + .list-group-item {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-md .list-group-item + .list-group-item.active {
+      .list-group-horizontal-md > .list-group-item + .list-group-item.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
@@ -4723,18 +4742,18 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; }
-    .list-group-horizontal-lg .list-group-item:first-child {
+    .list-group-horizontal-lg > .list-group-item:first-child {
       border-bottom-left-radius: 3px;
       border-top-right-radius: 0; }
-    .list-group-horizontal-lg .list-group-item:last-child {
+    .list-group-horizontal-lg > .list-group-item:last-child {
       border-top-right-radius: 3px;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-lg .list-group-item.active {
+    .list-group-horizontal-lg > .list-group-item.active {
       margin-top: 0; }
-    .list-group-horizontal-lg .list-group-item + .list-group-item {
+    .list-group-horizontal-lg > .list-group-item + .list-group-item {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-lg .list-group-item + .list-group-item.active {
+      .list-group-horizontal-lg > .list-group-item + .list-group-item.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
@@ -4744,30 +4763,27 @@ input[type="button"].btn-block {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row; }
-    .list-group-horizontal-xl .list-group-item:first-child {
+    .list-group-horizontal-xl > .list-group-item:first-child {
       border-bottom-left-radius: 3px;
       border-top-right-radius: 0; }
-    .list-group-horizontal-xl .list-group-item:last-child {
+    .list-group-horizontal-xl > .list-group-item:last-child {
       border-top-right-radius: 3px;
       border-bottom-left-radius: 0; }
-    .list-group-horizontal-xl .list-group-item.active {
+    .list-group-horizontal-xl > .list-group-item.active {
       margin-top: 0; }
-    .list-group-horizontal-xl .list-group-item + .list-group-item {
+    .list-group-horizontal-xl > .list-group-item + .list-group-item {
       border-top-width: 1px;
       border-left-width: 0; }
-      .list-group-horizontal-xl .list-group-item + .list-group-item.active {
+      .list-group-horizontal-xl > .list-group-item + .list-group-item.active {
         margin-left: -1px;
         border-left-width: 1px; } }
 
-.list-group-flush .list-group-item {
-  border-right-width: 0;
-  border-left-width: 0;
+.list-group-flush {
   border-radius: 0; }
-  .list-group-flush .list-group-item:first-child {
-    border-top-width: 0; }
-
-.list-group-flush:last-child .list-group-item:last-child {
-  border-bottom-width: 0; }
+  .list-group-flush > .list-group-item {
+    border-width: 0 0 1px; }
+    .list-group-flush > .list-group-item:last-child {
+      border-bottom-width: 0; }
 
 .list-group-item-primary {
   color: #33007c;
@@ -4781,15 +4797,15 @@ input[type="button"].btn-block {
     border-color: #33007c; }
 
 .list-group-item-secondary {
-  color: #027167;
-  background-color: #b9f5ef; }
+  color: #443667;
+  background-color: #dcd4ef; }
   .list-group-item-secondary.list-group-item-action:hover, .list-group-item-secondary.list-group-item-action:focus {
-    color: #027167;
-    background-color: #a3f2ea; }
+    color: #443667;
+    background-color: #cdc1e8; }
   .list-group-item-secondary.list-group-item-action.active {
     color: white;
-    background-color: #027167;
-    border-color: #027167; }
+    background-color: #443667;
+    border-color: #443667; }
 
 .list-group-item-success {
   color: #306030;
@@ -4874,10 +4890,7 @@ input[type="button"].btn-block {
 button.close {
   padding: 0;
   background-color: transparent;
-  border: 0;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none; }
+  border: 0; }
 
 a.close.disabled {
   pointer-events: none; }
@@ -4994,6 +5007,9 @@ a.close.disabled {
     display: block;
     height: -webkit-calc(100vh - 1rem);
     height: calc(100vh - 1rem);
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
     content: ""; }
   .modal-dialog-centered.modal-dialog-scrollable {
     -webkit-box-orient: vertical;
@@ -5113,7 +5129,10 @@ a.close.disabled {
     min-height: calc(100% - 3.5rem); }
     .modal-dialog-centered::before {
       height: -webkit-calc(100vh - 3.5rem);
-      height: calc(100vh - 3.5rem); }
+      height: calc(100vh - 3.5rem);
+      height: -webkit-min-content;
+      height: -moz-min-content;
+      height: min-content; }
   .modal-sm {
     max-width: 300px; } }
 
@@ -5551,14 +5570,18 @@ a.close.disabled {
     -webkit-transform: scale(0);
             transform: scale(0); }
   50% {
-    opacity: 1; } }
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
 
 @keyframes spinner-grow {
   0% {
     -webkit-transform: scale(0);
             transform: scale(0); }
   50% {
-    opacity: 1; } }
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
 
 .spinner-grow {
   display: inline-block;
@@ -5602,12 +5625,12 @@ button.bg-primary:focus {
   background-color: #4d00bb !important; }
 
 .bg-secondary {
-  background-color: #04dac6 !important; }
+  background-color: #8367C7 !important; }
 
 a.bg-secondary:hover, a.bg-secondary:focus,
 button.bg-secondary:hover,
 button.bg-secondary:focus {
-  background-color: #03a899 !important; }
+  background-color: #6544b7 !important; }
 
 .bg-success {
   background-color: #5cb85c !important; }
@@ -5697,7 +5720,7 @@ button.bg-dark:focus {
   border-color: #6200ee !important; }
 
 .border-secondary {
-  border-color: #04dac6 !important; }
+  border-color: #8367C7 !important; }
 
 .border-success {
   border-color: #5cb85c !important; }
@@ -6637,6 +6660,24 @@ button.bg-dark:focus {
   .float-xl-none {
     float: none !important; } }
 
+.user-select-all {
+  -webkit-user-select: all !important;
+     -moz-user-select: all !important;
+      -ms-user-select: all !important;
+          user-select: all !important; }
+
+.user-select-auto {
+  -webkit-user-select: auto !important;
+     -moz-user-select: auto !important;
+      -ms-user-select: auto !important;
+          user-select: auto !important; }
+
+.user-select-none {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important; }
+
 .overflow-auto {
   overflow: auto !important; }
 
@@ -6762,17 +6803,6 @@ button.bg-dark:focus {
 
 .vh-100 {
   height: 100vh !important; }
-
-.stretched-link::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: auto;
-  content: "";
-  background-color: rgba(0, 0, 0, 0); }
 
 .m-0 {
   margin: 0 !important; }
@@ -8132,6 +8162,17 @@ button.bg-dark:focus {
   .mx-xl-auto {
     margin-left: auto !important; } }
 
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0, 0, 0, 0); }
+
 .text-monospace {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important; }
 
@@ -8227,10 +8268,10 @@ a.text-primary:hover, a.text-primary:focus {
   color: #4300a2 !important; }
 
 .text-secondary {
-  color: #04dac6 !important; }
+  color: #8367C7 !important; }
 
 a.text-secondary:hover, a.text-secondary:focus {
-  color: #038f82 !important; }
+  color: #5b3da5 !important; }
 
 .text-success {
   color: #5cb85c !important; }
@@ -8291,8 +8332,7 @@ a.text-dark:hover, a.text-dark:focus {
   text-decoration: none !important; }
 
 .text-break {
-  word-break: break-word !important;
-  overflow-wrap: break-word !important; }
+  word-wrap: break-word !important; }
 
 .text-reset {
   color: inherit !important; }
@@ -12808,7 +12848,7 @@ readers do not read off random characters that represent icons */
 
 /* Load components styling */
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Alert component styling.
 * ------------------------------------------------------------------------ */
 /* Mixin for creating alert variants */
@@ -12953,12 +12993,12 @@ readers do not read off random characters that represent icons */
 .alert-secondary {
   /* Create alert variant from mixin: alert-variant($background, $border, $color)) */
   color: #f8f9fa;
-  background-color: #04dac6;
-  border-color: #04dac6; }
+  background-color: #8367C7;
+  border-color: #8367C7; }
   .alert-secondary hr {
-    border-top-color: #03a899; }
+    border-top-color: #6544b7; }
   .alert-secondary .alert-link {
-    color: #012b27; }
+    color: #32215a; }
 
 .alert-c3 {
   /* Create alert variant from mixin: alert-variant($background, $border, $color)) */
@@ -13071,11 +13111,11 @@ readers do not read off random characters that represent icons */
     color: black; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Button component styling.
 * ------------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Button mixins.
 * ------------------------------------------------------------------------ */
 /* Mixins for creating button variants */
@@ -13449,7 +13489,7 @@ readers do not read off random characters that represent icons */
 .btn-secondary {
   /* button-variant($background, $border, $color)) */
   color: #f8f9fa;
-  background-color: #04dac6;
+  background-color: #8367C7;
   border: none;
   -webkit-transition: all ease-in-out 0.25s;
   transition: all ease-in-out 0.25s; }
@@ -13463,14 +13503,14 @@ readers do not read off random characters that represent icons */
   .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):hover,
   .show > .btn-secondary.dropdown-toggle {
     color: #f8f9fa;
-    background-color: #04e4cf;
+    background-color: #896eca;
     -webkit-box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2);
             box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.2); }
   .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active {
-    background-color: #04f3dd; }
+    background-color: #927ace; }
   .btn-secondary:disabled, .btn-secondary.disabled {
     color: #f8f9fa;
-    background-color: #04dac6;
+    background-color: #8367C7;
     opacity: 0.65; }
 
 .btn-c3 {
@@ -14108,9 +14148,9 @@ readers do not read off random characters that represent icons */
 
 .btn-outline-secondary {
   /* button-outline-variant($background, $border, $color)) */
-  color: #04dac6;
+  color: #8367C7;
   background-color: transparent;
-  border: 1px solid #04dac6; }
+  border: 1px solid #8367C7; }
   .btn-outline-secondary:not(:disabled):not(.disabled) {
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.075);
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.075); }
@@ -14119,15 +14159,15 @@ readers do not read off random characters that represent icons */
               box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.075); }
   .btn-outline-secondary:not(:disabled):not(.disabled):hover, .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active,
   .show > .btn-outline-secondary.dropdown-toggle {
-    background-color: rgba(4, 218, 198, 0.05);
+    background-color: rgba(131, 103, 199, 0.05);
     -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.1);
-    border-color: #04dac6;
-    color: #04dac6; }
+    border-color: #8367C7;
+    color: #8367C7; }
   .btn-outline-secondary:not(:disabled):not(.disabled):active, .btn-outline-secondary:not(:disabled):not(.disabled).active {
-    background-color: rgba(4, 218, 198, 0.1); }
+    background-color: rgba(131, 103, 199, 0.1); }
   .btn-outline-secondary:disabled, .btn-outline-secondary.disabled {
-    color: #04dac6;
+    color: #8367C7;
     opacity: 0.65; }
 
 .btn-outline-c3 {
@@ -14395,7 +14435,7 @@ readers do not read off random characters that represent icons */
     opacity: 0.65; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Card component styling.
 * ------------------------------------------------------------------------ */
 /* Global card styling */
@@ -14426,10 +14466,11 @@ readers do not read off random characters that represent icons */
   .card.card-rotate .front, .card.card-rotate .back {
     width: 100%;
     height: 100%;
-    -webkit-transition: -webkit-transform ease-in-out 0.75s;
-    transition: -webkit-transform ease-in-out 0.75s;
-    transition: transform ease-in-out 0.75s;
-    transition: transform ease-in-out 0.75s, -webkit-transform ease-in-out 0.75s;
+    -webkit-transition: -webkit-transform ease 0.75s;
+    transition: -webkit-transform ease 0.75s;
+    transition: transform ease 0.75s;
+    transition: transform ease 0.75s, -webkit-transform ease 0.75s;
+    will-change: transform;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -14459,7 +14500,7 @@ readers do not read off random characters that represent icons */
   background-color: rgba(0, 0, 0, 0.5); }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Checkbox component styling.
 * ------------------------------------------------------------------------ */
 .custom-control-input:checked ~ .custom-control-label:before {
@@ -14505,16 +14546,21 @@ readers do not read off random characters that represent icons */
   border: 2px solid #8796a4; }
 
 .custom-checkbox .custom-control-input ~ .custom-control-label::before, .custom-checkbox .custom-control-input ~ .custom-control-label::after {
-  -webkit-transition: all 0.15s;
-  transition: all 0.15s;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -webkit-transition-property: height, width, border, -webkit-transform;
+  transition-property: height, width, border, -webkit-transform;
+  transition-property: height, width, transform, border;
+  transition-property: height, width, transform, border, -webkit-transform;
+  will-change: height, width, transform, border;
   height: 18px;
   width: 18px;
   top: 2px;
   right: 0;
   margin-left: 0;
-  -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
-          transform: rotate(0); }
+  -webkit-transform: rotate(0) translateX(0) translateY(0);
+      -ms-transform: rotate(0) translateX(0) translateY(0);
+          transform: rotate(0) translateX(0) translateY(0); }
 
 .custom-checkbox .custom-control-input ~ .custom-control-label::after {
   opacity: 0;
@@ -14527,12 +14573,10 @@ readers do not read off random characters that represent icons */
   border-bottom: 2px solid #6200ee;
   height: 1.2rem;
   width: 0.6rem;
-  top: -0.1rem;
-  margin-left: 0.3rem;
   border-radius: 0;
-  -webkit-transform: rotate(35deg);
-      -ms-transform: rotate(35deg);
-          transform: rotate(35deg);
+  -webkit-transform: rotate(35deg) translateX(0.3rem) translateY(-0.3rem);
+      -ms-transform: rotate(35deg) translateX(0.3rem) translateY(-0.3rem);
+          transform: rotate(35deg) translateX(0.3rem) translateY(-0.3rem);
   background-color: transparent; }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label:after {
@@ -14555,6 +14599,11 @@ readers do not read off random characters that represent icons */
 .custom-checkbox-filled .custom-control-input ~ .custom-control-label::before, .custom-checkbox-filled .custom-control-input ~ .custom-control-label::after {
   -webkit-transition: all 0.15s;
   transition: all 0.15s;
+  -webkit-transition-property: height, width, border, top, margin-left, background, -webkit-transform;
+  transition-property: height, width, border, top, margin-left, background, -webkit-transform;
+  transition-property: height, width, border, transform, top, margin-left, background;
+  transition-property: height, width, border, transform, top, margin-left, background, -webkit-transform;
+  will-change: height, width, border, transform, top, margin-left, background;
   height: 18px;
   width: 18px;
   top: 2px;
@@ -14615,6 +14664,11 @@ readers do not read off random characters that represent icons */
   .custom-radio .custom-control-input ~ .custom-control-label:before {
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
+    -webkit-transition-property: background, -webkit-transform;
+    transition-property: background, -webkit-transform;
+    transition-property: transform, background;
+    transition-property: transform, background, -webkit-transform;
+    will-change: transform, background;
     -webkit-transform: scale(0);
         -ms-transform: scale(0);
             transform: scale(0);
@@ -14645,20 +14699,30 @@ readers do not read off random characters that represent icons */
   .custom-switch .custom-control-input ~ .custom-control-label:after {
     -webkit-transition: all 0.15s ease;
     transition: all 0.15s ease;
+    -webkit-transition-property: background-color, -webkit-transform;
+    transition-property: background-color, -webkit-transform;
+    transition-property: background-color, transform;
+    transition-property: background-color, transform, -webkit-transform;
+    will-change: background-color, transform;
     background-color: #95a2af;
     height: 18px;
     width: 18px;
     top: 0.2rem;
     border-radius: 100%;
-    left: -2.75rem; }
+    left: -2.75em;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0); }
   .custom-switch .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #b2bcc5; }
   .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
     background-color: #6200ee;
-    left: -2.25rem; }
+    -webkit-transform: translateX(1.25em);
+        -ms-transform: translateX(1.25em);
+            transform: translateX(1.25em); }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Color styling.
 * ------------------------------------------------------------------------ */
 body {
@@ -14725,7 +14789,7 @@ body {
 
 .bg-secondary, .img-overlay.bg-secondary:before {
   /* Create background variant from mixin: background-variant($background)) */
-  background-color: #04dac6 !important; }
+  background-color: #8367C7 !important; }
 
 .bg-c3, .img-overlay.bg-c3:before {
   /* Create background variant from mixin: background-variant($background)) */
@@ -14830,7 +14894,7 @@ body {
 
 .text-secondary {
   /* Create text variant from mixin: text-variant($color)) */
-  color: #04dac6 !important; }
+  color: #8367C7 !important; }
 
 .text-c3 {
   /* Create text variant from mixin: text-variant($color)) */
@@ -14935,7 +14999,7 @@ body {
 
 .border-secondary {
   /* Create border variant from mixin: border-variant($color)) */
-  border-color: #04dac6 !important; }
+  border-color: #8367C7 !important; }
 
 .border-c3 {
   /* Create border variant from mixin: border-variant($color)) */
@@ -14986,7 +15050,7 @@ body {
   background-color: black; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Dropdown component styling.
 * ------------------------------------------------------------------------ */
 .navbar-nav .dropdown-menu {
@@ -15001,8 +15065,13 @@ body {
           transition-duration: 1.5s;
   position: relative; }
   .dropdown .dropdown-toggle:after, .btn-group .dropdown-toggle:after, .input-group-prepend .dropdown-toggle:after, .input-group-append .dropdown-toggle:after {
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    will-change: transform;
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg); }
   .dropdown.show .dropdown-toggle:after, .btn-group.show .dropdown-toggle:after, .input-group-prepend.show .dropdown-toggle:after, .input-group-append.show .dropdown-toggle:after {
@@ -15021,8 +15090,13 @@ body {
     border-radius: 3px;
     -webkit-box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.15);
             box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.15);
-    -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    -webkit-transition-property: opacity, visibility, -webkit-transform;
+    transition-property: opacity, visibility, -webkit-transform;
+    transition-property: transform, opacity, visibility;
+    transition-property: transform, opacity, visibility, -webkit-transform;
+    will-change: transform, opacity, visibility;
     opacity: 0;
     top: 0;
     visibility: hidden;
@@ -15038,31 +15112,27 @@ body {
               transform-origin: top right; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Fixes.
 * ------------------------------------------------------------------------ */
-/* Fix containers having no width on smallest media size */
-@media (max-width: 574px) {
-  .container {
-    width: 100%; } }
-
-img {
-  max-width: 100%;
-  height: auto; }
-
 a {
   color: inherit; }
 
 .text-white a:hover {
   color: #d9d9d9; }
 
+/* Improve animation performance */
+.collapse, .collapsing {
+  will-change: height; }
+
+/* Fix vh-100 in mobile browsers */
 .vh-100 {
   height: 100vh !important;
   height: -webkit-calc(var(--vh, 1vh) * 100) !important;
   height: calc(var(--vh, 1vh) * 100) !important; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Image component styling.
 * ------------------------------------------------------------------------ */
 .img-overlay {
@@ -15091,11 +15161,11 @@ a {
     opacity: 0.75; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Input component styling.
 * ------------------------------------------------------------------------ */
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Input mixins.
 * ------------------------------------------------------------------------ */
 /* Mixins for creating form feedback variants */
@@ -15107,14 +15177,15 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 3px;
-  -webkit-transition: background 0.25s ease-out;
-  transition: background 0.25s ease-out;
+  -webkit-transition: background-size 0.25s ease;
+  transition: background-size 0.25s ease;
+  will-change: background-size;
   background: no-repeat bottom, 50% -webkit-calc(100% - 1px);
   background: no-repeat bottom, 50% calc(100% - 1px);
   background-size: 0% 100%, 100% 100%;
   background-image: -webkit-linear-gradient(bottom, #6200ee 2px, rgba(0, 0, 0, 0) 0), -webkit-linear-gradient(bottom, #d3d3d3 1px, rgba(204, 204, 204, 0) 0);
   background-image: linear-gradient(0deg, #6200ee 2px, rgba(0, 0, 0, 0) 0), linear-gradient(0deg, #d3d3d3 1px, rgba(204, 204, 204, 0) 0); }
-  textarea.form-control:not([readonly]):focus, textarea.form-control:not([readonly]).focus, input.form-control:not([readonly]):focus, input.form-control:not([readonly]).focus, .custom-file-label:not([readonly]):focus, .custom-file-label:not([readonly]).focus, select.custom-select:not([readonly]):focus, select.custom-select:not([readonly]).focus {
+  textarea.form-control:not([readonly]):focus, textarea.form-control:not([readonly]).focus, textarea.form-control:not(:disabled):focus, textarea.form-control:not(.disabled):focus, input.form-control:not([readonly]):focus, input.form-control:not([readonly]).focus, input.form-control:not(:disabled):focus, input.form-control:not(.disabled):focus, .custom-file-label:not([readonly]):focus, .custom-file-label:not([readonly]).focus, .custom-file-label:not(:disabled):focus, .custom-file-label:not(.disabled):focus, select.custom-select:not([readonly]):focus, select.custom-select:not([readonly]).focus, select.custom-select:not(:disabled):focus, select.custom-select:not(.disabled):focus {
     background-color: transparent;
     -webkit-transition-duration: 0.25s;
             transition-duration: 0.25s;
@@ -15134,16 +15205,25 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
     position: relative;
     padding-top: 32px; }
     .form-group.label-float label {
-      -webkit-transition: all 0.25s ease-in-out;
-      transition: all 0.25s ease-in-out;
-      left: 0.2rem;
-      top: 2.4rem;
+      -webkit-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+      -webkit-transition-property: color, -webkit-transform;
+      transition-property: color, -webkit-transform;
+      transition-property: transform, color;
+      transition-property: transform, color, -webkit-transform;
+      -webkit-transform: translate(0.2rem, 2.4rem);
+          -ms-transform: translate(0.2rem, 2.4rem);
+              transform: translate(0.2rem, 2.4rem);
+      will-change: transform, color;
+      top: 0;
+      left: 0;
       margin-bottom: 0;
       position: absolute;
       color: #8e8e8e; }
     .form-group.label-float.active label {
-      left: 0;
-      top: 0;
+      -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+              transform: translate(0, 0);
       color: #333; }
 
 /* Contextual variants for inputs */
@@ -15257,7 +15337,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   border: none; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENS
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENS
 *   List component styling.
 * ------------------------------------------------------------------------ */
 /* Mixin for creating list group item variants */
@@ -15505,18 +15585,18 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
 .list-group-item-secondary {
   /* Create list group item  variant from mixin: listgroupitem-variant($background, $border, $color)) */
   color: #f8f9fa;
-  background-color: #04dac6;
+  background-color: #8367C7;
   border: none; }
   .list-group-item-secondary.list-group-item-action.disabled:hover, .list-group-item-secondary.list-group-item-action:disabled:hover {
     color: #f8f9fa;
-    background-color: #04dac6; }
+    background-color: #8367C7; }
   .list-group-item-secondary.list-group-item-action:not(:disabled):not(.disabled):hover, .list-group-item-secondary.list-group-item-action:not(:disabled):not(.disabled):active, .list-group-item-secondary.list-group-item-action:not(:disabled):not(.disabled).active {
     border: none;
     color: #f8f9fa;
-    background-color: #038f82; }
+    background-color: #5b3da5; }
   .list-group-item-secondary:disabled, .list-group-item-secondary.disabled {
     color: #f8f9fa;
-    background-color: #04dac6;
+    background-color: #8367C7;
     opacity: .65;
     cursor: default; }
   .list-group-item-secondary:hover, .list-group-item-secondary:focus {
@@ -15759,7 +15839,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
       color: inherit; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Modal component styling.
 * ------------------------------------------------------------------------ */
 .modal-content {
@@ -15778,7 +15858,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   border-top-color: transparent; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Navbar component styling.
 * ------------------------------------------------------------------------ */
 /* Animated navbar toggler, transforming from a hamburger to an X */
@@ -15796,43 +15876,47 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
       display: block;
       height: 100%;
       position: absolute;
-      -webkit-transition: all 0.25s ease-out;
-      transition: all 0.25s ease-out;
+      top: 0;
+      -webkit-transition: -webkit-transform 0.25s ease;
+      transition: -webkit-transform 0.25s ease;
+      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+      will-change: transform;
       width: 100%; }
     .navbar-toggler > .navbar-toggler-icon:before {
-      top: 0;
-      -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-              transform: rotate(45deg); }
+      -webkit-transform: rotate(45deg) translateY(0);
+          -ms-transform: rotate(45deg) translateY(0);
+              transform: rotate(45deg) translateY(0); }
     .navbar-toggler > .navbar-toggler-icon:after {
-      top: 0;
-      -webkit-transform: rotate(-45deg);
-          -ms-transform: rotate(-45deg);
-              transform: rotate(-45deg); }
+      -webkit-transform: rotate(-45deg) translateY(0);
+          -ms-transform: rotate(-45deg) translateY(0);
+              transform: rotate(-45deg) translateY(0); }
   .navbar-toggler.collapsed .navbar-toggler-icon {
     background-image: none !important;
     background: #343a40; }
     .navbar-toggler.collapsed .navbar-toggler-icon:before {
-      top: -6px;
-      -webkit-transform: none;
-          -ms-transform: none;
-              transform: none; }
+      -webkit-transform: translateY(-6px);
+          -ms-transform: translateY(-6px);
+              transform: translateY(-6px); }
     .navbar-toggler.collapsed .navbar-toggler-icon:after {
-      top: 6px;
-      -webkit-transform: none;
-          -ms-transform: none;
-              transform: none; }
+      -webkit-transform: translateY(6px);
+          -ms-transform: translateY(6px);
+              transform: translateY(6px); }
   .navbar-toggler.collapsed:hover > .navbar-toggler-icon:before {
-    top: -8px; }
+    -webkit-transform: translateY(-8px);
+        -ms-transform: translateY(-8px);
+            transform: translateY(-8px); }
   .navbar-toggler.collapsed:hover > .navbar-toggler-icon:after {
-    top: 8px; }
+    -webkit-transform: translateY(8px);
+        -ms-transform: translateY(8px);
+            transform: translateY(8px); }
 
 /* Styling for the dark navbar */
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(248, 249, 250, 0.8);
   position: relative;
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease; }
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease; }
   .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link.active {
     color: #f8f9fa; }
 
@@ -15891,38 +15975,44 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   -webkit-transition: background-color 0.15s ease-out, -webkit-box-shadow 0.15s ease-out;
   transition: background-color 0.15s ease-out, -webkit-box-shadow 0.15s ease-out;
   transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out;
-  transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out, -webkit-box-shadow 0.15s ease-out; }
+  transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out, -webkit-box-shadow 0.15s ease-out;
+  will-change: background-color, box-shadow; }
   .navbar-scrollstyle .navbar-nav {
-    -webkit-transition: all 0.15s ease-out;
-    transition: all 0.15s ease-out; }
+    -webkit-transition: padding 0.15s ease-out;
+    transition: padding 0.15s ease-out;
+    will-change: padding; }
   .navbar-scrollstyle:not(.scrolled):not(.show) {
     background-color: transparent !important;
     -webkit-box-shadow: none !important;
             box-shadow: none !important; }
     .navbar-scrollstyle:not(.scrolled):not(.show) .navbar-nav {
-      padding-top: 10px;
-      padding-bottom: 10px; }
+      padding: 10px 0; }
 
 /* Styling for making background and shadow visible on collapse */
 .navbar-transparent {
   -webkit-transition: background-color 0.15s ease-out, -webkit-box-shadow 0.15s ease-out;
   transition: background-color 0.15s ease-out, -webkit-box-shadow 0.15s ease-out;
   transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out;
-  transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out, -webkit-box-shadow 0.15s ease-out; }
+  transition: background-color 0.15s ease-out, box-shadow 0.15s ease-out, -webkit-box-shadow 0.15s ease-out;
+  will-change: background-color, box-shadow; }
   .navbar-transparent:not(.show) {
     background-color: transparent !important;
     -webkit-box-shadow: none !important;
             box-shadow: none !important; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Nav component styling.
 * ------------------------------------------------------------------------ */
 /* Tabs & pills */
 .nav-tabs .nav-link, .nav-pills .nav-link {
   text-align: center;
-  -webkit-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in; }
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+  -webkit-transition-property: color, background, border, -webkit-box-shadow;
+  transition-property: color, background, border, -webkit-box-shadow;
+  transition-property: color, background, box-shadow, border;
+  transition-property: color, background, box-shadow, border, -webkit-box-shadow; }
 
 .nav-tabs {
   border-bottom-width: 1px;
@@ -15965,7 +16055,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
       color: #4d00bb; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Progress component styling.
 * ------------------------------------------------------------------------ */
 /* Outer progress container */
@@ -15978,7 +16068,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   background-color: #6200ee; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Root styling.
 * ------------------------------------------------------------------------ */
 :root {
@@ -15996,7 +16086,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   --gray: #6c757d;
   --gray-dark: #343a40;
   --primary: #6200ee;
-  --secondary: #04dac6;
+  --secondary: #8367C7;
   --c3: #9b59b6;
   --c4: #34495e;
   --c5: #e67e22;
@@ -16012,7 +16102,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Tooltip component styling.
 * ------------------------------------------------------------------------ */
 .tooltip-inner {
@@ -16033,7 +16123,7 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
   border-left-color: #343a40; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Typography component styling.
 * ------------------------------------------------------------------------ */
 /* Global typography */
@@ -16065,7 +16155,7 @@ a {
     text-decoration: none; }
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Utilities styling.
 * ------------------------------------------------------------------------ */
 /* Height utilities */

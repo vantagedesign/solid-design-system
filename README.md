@@ -1,13 +1,13 @@
 # [Solid design system](https://docs.vantage-design.com/solid/demo)
 
-![Product thumbnail](https://github.com/vantagedesign/assets/blob/master/solid-design-system/solid-thumbnail-shadow.png)
+![Product thumbnail](https://raw.githubusercontent.com/vantagedesign/assets/master/solid-design-system/solid-thumbnail-shadow.png)
 
 Solid design system is a feature-complete design system, inspired by Google's Material Design and powered by Bootstrap 4. It features a ton of custom-styled components, handcrafted sections and beautiful ready-to-go example pages. Solid builds upon and extends Bootstrap with plugins such as a date & time picker, parallax, lightbox, carousels, tags, icons from Font Awesome, and more. Bootstrap and these plugins have all been styled according to the design language of Solid, and this combination of components and design forms the Solid design system. 
 
 Besides a beautiful design and a ton of components, Solid feautures a powerful build workflow, powered by GulpJS. This enables you to write stylesheets with SASS CSS (SCSS) and provides concatenated and minified CSS, JavaScript and even images, to make your project as fast as possible for the end user. All features of Solid are extensively documented.
 
 ### Components
-Solid features all of the standard Bootstrap 4 components and syntax, and more. Therefore, you can use your existing knowledge of Bootstrap. Use components such as buttons, alerts, cards, dropdowns, navbars, navs, progress, and much more. 
+Solid features all of the standard Bootstrap 4 components and syntax, and more. Therefore, you can use your existing knowledge of Bootstrap. Use components such as butons, alerts, cards, dropdowns, navbars, navs, progress, and much more. 
 
 Useful extensions have been included, such as flippable cards, a navbar that changes style on scrolling, and more.
 

@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Input mixins.
 * ------------------------------------------------------------------------ */
 
@@ -14,11 +14,12 @@ $input-border-radius:		$border-radius;
 	border: none;
 	box-shadow: none;
 	border-radius: $input-border-radius;
-	transition: background $input-transition-speed ease-out;
+	transition: background-size $input-transition-speed ease;
+	will-change: background-size;
 	background: no-repeat bottom, 50% calc(100% - 1px);
 	background-size: 0% 100%, 100% 100%;
 	background-image: linear-gradient(0deg, $input-underline-active-bg 2px, rgba(0,0,0,0) 0), linear-gradient(0deg, $input-underline-bg 1px, hsla(0,0%,80%,0) 0);
-	&:not([readonly]):focus, &:not([readonly]).focus{
+	&:not([readonly]):focus, &:not([readonly]).focus, &:not(:disabled):focus, &:not(.disabled):focus{
 		background-color: transparent;
 		transition-duration: $input-transition-speed;
 		background-size: 100% 100%, 100% 100%;

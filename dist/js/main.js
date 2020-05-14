@@ -3,7 +3,7 @@
 */
 
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Functions to initialize plugins.
 * ------------------------------------------------------------------------ */
 
@@ -42,6 +42,11 @@ function initializePlugins(){
 	/* Plugin: bootstrap-select (selects) */
 	try {
 		$('.selectpicker').selectpicker('render');
+	} catch (error) {}
+
+	/* Plugin: Parallax */
+	try {
+		$('.parallax').parallax();
 	} catch (error) {}
 
 	/* Plugin: Photoswipe (lightbox) */

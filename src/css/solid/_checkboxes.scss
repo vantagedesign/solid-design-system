@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *   Checkbox component styling.
 * ------------------------------------------------------------------------ */
 
@@ -74,13 +74,15 @@ $switch-transition-speed:           $transition-speed-fast;
     }
     .custom-control-input ~ .custom-control-label{
         &::before, &::after{
-            transition: all $checkbox-transition-speed;
+            transition: all $checkbox-transition-speed ease;
+            transition-property: height, width, transform, border;
+            will-change: height, width, transform, border;
             height: $custom-control-base-size;
             width: $custom-control-base-size;
             top: 2px;
             right: 0;
             margin-left: 0;
-            transform: rotate(0);
+            transform: rotate(0) translateX(0) translateY(0);
         }
         &::after{
             opacity: 0;
@@ -95,10 +97,8 @@ $switch-transition-speed:           $transition-speed-fast;
             border-bottom: $checkbox-border-width solid $checkbox-active-bg;
             height: 1.2rem;
             width: 0.6rem;
-            top: -0.1rem;
-            margin-left: 0.3rem;
             border-radius: 0;
-            transform: rotate(35deg);
+            transform: rotate(35deg) translateX(0.3rem) translateY(-0.3rem);
             background-color: transparent;
         }
         &:after{
@@ -124,6 +124,8 @@ $switch-transition-speed:           $transition-speed-fast;
     .custom-control-input ~ .custom-control-label{
         &::before, &::after{
             transition: all $checkbox-transition-speed;
+            transition-property: height, width, border, transform, top, margin-left, background;
+            will-change: height, width, border, transform, top, margin-left, background;
             height: $custom-control-base-size;
             width: $custom-control-base-size;
             top: 2px;
@@ -186,6 +188,8 @@ $switch-transition-speed:           $transition-speed-fast;
         }
         &:before{
             transition: all $radio-transition-speed ease;
+            transition-property: transform, background;
+            will-change: transform, background;
             transform: scale(0);
             background-color: $radio-active-bg;
         }
@@ -221,12 +225,15 @@ $switch-transition-speed:           $transition-speed-fast;
         }
         &:after{
             transition: all $switch-transition-speed ease;
+            transition-property: background-color, transform;
+            will-change: background-color, transform;
             background-color: darken($switch-bg, 10%);
             height: $custom-control-base-size;
             width: $custom-control-base-size;
             top: 0.2rem;
             border-radius: 100%;
-            left: -2.75rem;
+            left: -2.75em;
+            transform: translateX(0);
         }
     }
     .custom-control-input:checked ~ .custom-control-label{
@@ -235,7 +242,7 @@ $switch-transition-speed:           $transition-speed-fast;
         }
         &::after{
             background-color: $switch-active-bg;
-            left: -2.25rem;
+            transform: translateX(1.25em);
         }
     }
 }

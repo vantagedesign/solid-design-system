@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Navbar component styling.
 * ------------------------------------------------------------------------ */
 
@@ -26,16 +26,16 @@ $navbar-light-color:		color-text("light");
 			display: block;
 			height: 100%;
 			position: absolute;
-			transition: all $navbar-toggler-speed ease-out;
+			top: 0;
+			transition: transform $navbar-toggler-speed ease;
+			will-change: transform;
 			width: 100%;
 		}
 		&:before{
-			top: 0;
-			transform: rotate(45deg);
+			transform: rotate(45deg) translateY(0);
 		}
 		&:after{
-			top: 0;
-			transform: rotate(-45deg);
+			transform: rotate(-45deg) translateY(0);
 		}
 	}
 	&.collapsed{
@@ -43,20 +43,18 @@ $navbar-light-color:		color-text("light");
 			background-image: none !important;
 			background: $navbar-toggler-bg;
 			&:before{
-				top: -6px;
-				transform: none;
+				transform: translateY(-6px);
 			}
 			&:after{
-				top: 6px;
-				transform: none;
+				transform: translateY(6px);
 			}
 		}
 		&:hover{
 			& > .navbar-toggler-icon:before{
-				top: -8px;
+				transform: translateY(-8px);
 			}
 			& > .navbar-toggler-icon:after{
-				top: 8px;
+				transform: translateY(8px);
 			}
 		}
 	}
@@ -68,7 +66,7 @@ $navbar-light-color:		color-text("light");
 	.navbar-nav .nav-link{
 		color: rgba($navbar-dark-color, 0.8);
 		position: relative;
-		transition: all $transition-speed ease;
+		transition: color $transition-speed ease;
 		&:hover, &.active{
 			color: $navbar-dark-color;
 		}
@@ -116,22 +114,25 @@ $navbar-light-color:		color-text("light");
 /* Styling for making background and shadow visible on scroll */
 .navbar-scrollstyle{
 	transition: background-color $transition-speed-fast ease-out, box-shadow $transition-speed-fast ease-out;
+	will-change: background-color, box-shadow;
 	.navbar-nav{
-		transition: all $transition-speed-fast ease-out;
+		transition: padding $transition-speed-fast ease-out;
+		will-change: padding;
 	}
 	&:not(.scrolled):not(.show){
 		background-color: transparent !important;
 		box-shadow: none !important;
 		.navbar-nav{
-			padding-top: 10px;
-			padding-bottom: 10px;
+			padding: 10px 0;
 		}
 	}
 }
 
+
 /* Styling for making background and shadow visible on collapse */
 .navbar-transparent{
-	transition: background-color $transition-speed-fast ease-out, box-shadow $transition-speed-fast ease-out;
+		transition: background-color $transition-speed-fast ease-out, box-shadow $transition-speed-fast ease-out;
+		will-change: background-color, box-shadow;
 	&:not(.show){
 		background-color: transparent !important;
 		box-shadow: none !important;

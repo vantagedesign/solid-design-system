@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-*   SOLID DESIGN SYSTEM | @version 1.0.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
+*   SOLID DESIGN SYSTEM | @version 1.1.0 | @author Vantage Design | @license https://github.com/vantagedesign/solid-design-system/blob/master/LICENSE.md
 *	Input component styling.
 * ------------------------------------------------------------------------ */
 
@@ -37,17 +37,19 @@ textarea.form-control, input.form-control, .custom-file-label, select.custom-sel
 		position: relative;
 		padding-top: 32px;
 		label{
-			transition: all $input-transition-speed ease-in-out;
-			left: 0.2rem;
-			top: 2.4rem;
+			transition: all $input-transition-speed ease;
+			transition-property: transform, color;
+			transform: translate(0.2rem, 2.4rem);
+			will-change: transform, color;
+			top: 0;
+			left: 0;
 			margin-bottom: 0;
 			position: absolute;
 			color: $input-label-float-color;
 		}
 		&.active{
 			label{
-				left: 0;
-				top: 0;
+				transform: translate(0, 0);
 				color: #333;
 			}
 		}
